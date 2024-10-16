@@ -1,42 +1,3 @@
-
-// const phrases = [
-//     "Hardik",
-// ];
-// const typingSpeed = 60;
-// const deletingSpeed = 50;
-// const pauseBetweenPhrases = 1200;
-
-// let phraseIndex = 0;
-// let charIndex = 0;
-// let isDeleting = false;
-
-// function typewriter() {
-//     const currentPhrase = phrases[phraseIndex];
-//     const typewriterElement = document.getElementById("typewriter");
-
-//     if (isDeleting) {
-//         typewriterElement.innerHTML = currentPhrase.substring(0, charIndex - 1);
-//         charIndex--;
-//     } else {
-//         typewriterElement.innerHTML = currentPhrase.substring(0, charIndex + 1);
-//         charIndex++;
-//     }
-
-//     if (!isDeleting && charIndex === currentPhrase.length) {
-//         isDeleting = true;
-//         setTimeout(typeWriter, pauseBetweenPhrases);
-//     } else if (isDeleting && charIndex === 0) {
-//         isDeleting = false;
-//         phraseIndex = (phraseIndex + 1) % phrases.length;
-//         setTimeout(typeWriter, typingSpeed);
-//     } else {
-//         setTimeout(typeWriter, isDeleting ? deletingSpeed : typingSpeed);
-//     }
-// }
-
-// window.onload = typewriter;
-
-// Particle.js configuration
 particlesJS('particles-js', {
     particles: {
         number: {
@@ -93,6 +54,3 @@ particlesJS('particles-js', {
     },
     retina_detect: true
 });
-
-
-
