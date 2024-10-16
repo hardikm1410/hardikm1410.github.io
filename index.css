@@ -110,7 +110,7 @@ body {
     padding-right: 3.5px;
     white-space: nowrap;
     overflow: hidden;
-    animation: colorChange 15s linear infinite;
+    animation: colorChange 10s linear infinite;
     background: linear-gradient(to right, #ff00b3,#a200ff,#00eeff);
     background-size: 100% auto;
     -webkit-background-clip: text;
@@ -129,7 +129,7 @@ body {
     width: 2px;
     background: linear-gradient(to bottom, #ff00b3,#7c03c2);
     animation: blink 0.7s step-end infinite, colorChangeCursor 7s linear infinite;
-    background-size: 200% auto;
+    background-size: 100% auto;
     opacity: 2.0;
 }
 

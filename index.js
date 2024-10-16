@@ -2,10 +2,8 @@
 
 
 const phrases = [
-    "Welcome!",
-    "Hello! I'm Hardik",
+    "Hardik",
     
-    "Explore my first website."
 ];
 const typingSpeed = 60;
 const deletingSpeed = 50;
