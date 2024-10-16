@@ -1,0 +1,180 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+    .column {
+        flex: 100%; /* Stack columns on smaller screens */
+    }
+}
+
+/* For small phones (screen width less than 480px) */
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 16px; /* Adjust the font size */
+    }
+}
+
+.landscape-only {
+    display: block;
+}
+
+.portrait-warning {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
+}
+
+
+/* If the device is in portrait mode, hide the content and show a warning */
+@media only screen and (orientation: portrait) {
+    #particles-js,#typewriter,#typewriter::after, 
+    .animated-button{
+        display: none;
+    }
+    
+    .content-wrapper {
+        display: none; /* Hide particles and main content */
+    }
+
+    .portrait-warning {
+        display: block; /* Show warning message */
+    }
+}
+
+/* Show all content in landscape mode */
+@media only screen and (orientation: landscape) {
+    #particles-js,#typewriter,#typewriter::after,
+    .animated-button{
+        display: block;
+    }
+    .content-wrapper {
+        display: block; /* Show particles and main content */
+    }
+
+    .portrait-warning {
+        display: none; /* Hide warning message */
+    }
+}
+
+/* Wrapper container with padding */
+.container {
+    width: 100%;
+    padding: 15px;
+    margin: auto;
+}
+
+/* Main grid system */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+.column {
+    flex: 1; /* Each column takes an equal amount of space */
+    padding: 10px;
+    min-width: 250px; /* Ensures columns do not get too narrow */
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+#typewriter {
+    font-size: 3em;
+    padding-right: 3.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: colorChange 15s linear infinite;
+    background: linear-gradient(to right, #ff00dd,#7c03c2,#00eeff);
+    background-size: 150% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+#typewriter::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, #ff00dd,#7c03c2);
+    animation: blink 0.7s step-end infinite, colorChangeCursor 7s linear infinite;
+    background-size: 200% auto;
+}
+
+.animated-button {
+    padding: 12px 28px;
+    font-size: 1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #ff00dd, #7c03c2, #00eeff);
+    background-size: 200% auto;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 0 0 20px rgba(255, 0, 221, 0.3);
+}
+
+.animated-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 0, 221, 0.5);
+}
+
+.animated-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes blink {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes colorChange {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes colorChangeCursor {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
