@@ -17,7 +17,7 @@ body {
     z-index: 1000;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
 }
 
 .nav-links {
@@ -53,44 +53,7 @@ body {
     z-index: 1;
 }
 
-/* #typewriter {
-    font-size: 3em;
-    padding-right: 3.5px;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
-    background: linear-gradient(to right, #ff00b3, #a200ff, #00eeff);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-/* Create the blinking cursor */
-/* #typewriter::after { */
-    /* content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background: linear-gradient(to bottom, #ff00b3, #7c03c2);
-    animation: blink 0.75s step-end infinite;
-}*/  
-
-@keyframes blink {
-    from, to { opacity: 0; }
-    50% { opacity: 1; }
-}
-
-
-/* Blinking cursor animation */
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: white; }
-}
+ 
 
 
 .hero {
@@ -109,17 +72,33 @@ body {
     padding: 2rem;
     text-align: center;
 }
-
 .hero-title {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 3em;
+    padding-right: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    /* animation: typing 10s steps(30, end), blink 0.75s step-end infinite; */
     background: linear-gradient(to right, #ff00b3, #a200ff, #00eeff);
+    background-size: 150% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: colorChange 10s linear infinite;
+    position: relative;
+    margin-bottom: 20px;
 }
+/* 
+.hero-title::after { 
+     content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, #ff00b3, #7c03c2);
+    animation: blink 0.75s step-end infinite;
+}   */
 
+ 
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -140,13 +119,25 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.3s;
+    text-decoration: none;
     animation: gradientShift 3s ease infinite;
+}
+
+.cta-button a{
+   
+   
+    color: white;
+    text-decoration: none;
+   
 }
 
 .cta-button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(255, 0, 221, 0.5);
 }
+
+
+
 
 @keyframes colorChange {
     0% { background-position: 0% 50%; }

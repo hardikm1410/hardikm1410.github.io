@@ -1,41 +1,31 @@
+const text = "Hardik";
+const typingSpeed = 150; // Speed in milliseconds
+const delayBetweenLoops = 2000; // Delay between loops (2 seconds)
+let index = 0;
 
-// const phrases = [
-//     "Hardik",
-// ];
-// const typingSpeed = 60;
-// const deletingSpeed = 50;
-// const pauseBetweenPhrases = 1200;
+const typeWriter = () => {
+    const heroTitle = document.getElementById('heroTitle');
+    
 
-// let phraseIndex = 0;
-// let charIndex = 0;
-// let isDeleting = false;
+    // Add one letter at a time
+    if (index < text.length) {
+        heroTitle.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, typingSpeed); // Call the function recursively
+    } else {
+        // After the full text is typed, wait for some time before clearing the text and starting over
+        setTimeout(() => {
+            heroTitle.textContent = '';  // Clear the text
+            index = 0;                   // Reset index to 0
+            typeWriter();                 // Start typing again
+        }, delayBetweenLoops);
+    }
+};
 
-// function typewriter() {
-//     const currentPhrase = phrases[phraseIndex];
-//     const typewriterElement = document.getElementById("typewriter");
-
-//     if (isDeleting) {
-//         typewriterElement.innerHTML = currentPhrase.substring(0, charIndex - 1);
-//         charIndex--;
-//     } else {
-//         typewriterElement.innerHTML = currentPhrase.substring(0, charIndex + 1);
-//         charIndex++;
-//     }
-
-//     if (!isDeleting && charIndex === currentPhrase.length) {
-//         isDeleting = true;
-//         setTimeout(typeWriter, pauseBetweenPhrases);
-//     } else if (isDeleting && charIndex === 0) {
-//         isDeleting = false;
-//         phraseIndex = (phraseIndex + 1) % phrases.length;
-//         setTimeout(typeWriter, typingSpeed);
-//     } else {
-//         setTimeout(typeWriter, isDeleting ? deletingSpeed : typingSpeed);
-//     }
-// }
-
-// window.onload = typewriter;
-
+// Start the typing effect after the page loads
+window.onload = () => {
+    typeWriter();
+};
 // Particle.js configuration
 particlesJS('particles-js', {
     particles: {
