@@ -6,6 +6,7 @@ body {
     color: rgb(237, 216, 240);
 }
 
+
 .navbar {
     position: fixed;
     top: 0;
@@ -15,7 +16,7 @@ body {
     z-index: 1000;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(5px);
 }
 
 .nav-links {
@@ -29,14 +30,14 @@ body {
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
     border-radius: 25px;
-    transition: all 0.3s ease;
-    background: linear-gradient(90deg, #ff00dd, #7c03c2,#00eeff);
+    transition: all 0.6s ease;
+    background: linear-gradient(90deg,  #0084ff,#a200ff, #ff00d4,#ffbb00);
     background-size: 200% auto;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .nav-links a:hover {
-    opacity: .8;
+    opacity: 0.9;
     background-position: right center;
 }
 
@@ -69,7 +70,7 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff00dd, #7c03c2, #00eeff);
+    background: linear-gradient(45deg, #00eeff,#a200ff, #ff00d4,#ffbb00);
     padding: 5px;
 }
 
@@ -88,11 +89,22 @@ body {
 .profile-info h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(to right, #ff00b3, #a200ff, #00eeff);
+    background: linear-gradient(90deg, #8400ff,#ff00d4,#ffbb00); 
+    background-size: 200% auto;
     -webkit-background-clip: text;
+    transition: 0.7s;
+    color:azure;
+    animation: gradientShift 5s ease infinite;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 .skills-section {
     margin-top: 40px;

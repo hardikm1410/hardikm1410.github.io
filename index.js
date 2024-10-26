@@ -1,29 +1,35 @@
 const text = "Hardik";
-const typingSpeed = 150; // Speed in milliseconds
-const delayBetweenLoops = 2000; // Delay between loops (2 seconds)
-let index = 0;
+const titleElement = document.getElementById("title");
+let isDeleting = false;
+let charIndex = 0;
+let typingSpeed = 200;
+let deletingSpeed = 100;
 
-const typeWriter = () => {
-    const heroTitle = document.getElementById('heroTitle');
-    
+function typeWriter() {
+    const currentText = text.substring(0, charIndex);
+    titleElement.textContent = currentText;
 
-    // Add one letter at a time
-    if (index < text.length) {
-        heroTitle.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, typingSpeed); // Call the function recursively
-    } else {
-        // After the full text is typed, wait for some time before clearing the text and starting over
-        setTimeout(() => {
-            heroTitle.textContent = '';  // Clear the text
-            index = 0;                   // Reset index to 0
-            typeWriter();                 // Start typing again
-        }, delayBetweenLoops);
+    if (!isDeleting && charIndex < text.length) {
+        // Typing
+        charIndex++;
+        setTimeout(typeWriter, typingSpeed);
+    } else if (!isDeleting && charIndex === text.length) {
+        // End of typing, wait before deleting
+        isDeleting = true;
+        setTimeout(typeWriter, 1500); // Pause at the end
+    } else if (isDeleting && charIndex > 0) {
+        // Deleting
+        charIndex--;
+        setTimeout(typeWriter, deletingSpeed);
+    } else if (isDeleting && charIndex === 0) {
+        // End of deleting, start typing again
+        isDeleting = false;
+        setTimeout(typeWriter, 500); // Pause before retyping
     }
-};
+}
 
-// Start the typing effect after the page loads
-window.onload = () => {
+// Start the typewriter effect when the page loads
+window.onload = function() {
     typeWriter();
 };
 // Particle.js configuration
@@ -54,7 +60,7 @@ particlesJS('particles-js', {
             enable: true,
             distance: 200,
             color: "#ff00dd",
-            opacity: 0.2,
+            opacity: 0.4,
             width: 1
         },
         move: {
