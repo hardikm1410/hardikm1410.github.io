@@ -1,0 +1,164 @@
+
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    background-color: #01000a;
+    min-height: 100vh;
+    color: rgb(213, 255, 246);
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+
+
+
+.container {
+    text-align: center;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 30vh;
+}
+
+
+
+#title {
+    font-size: 4rem;
+    
+    border-right: 3px transparent;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    position:relative;
+    animation:typing 4.5s steps(30, end);
+    background: linear-gradient(45deg, #000541,#0011ff, #00eeff,#bbf1ff);
+    transition: 0.8s;
+    animation: gradientShift 5s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text; 
+    color: transparent;
+    background-size: 200% auto;
+    margin-bottom: -1px;
+}
+
+#title::after {
+    content: '';
+    position: absolute;
+    margin-left:4px;
+    /* right: -3; */
+    top: 3%;  /* Adjust to vertically center the cursor */
+    height: 90%;  /* Adjust height of cursor */
+    width: 5px;
+    color:transparent;
+    -webkit-background-clip:content-box;
+    background-clip:content-box; 
+    background: linear-gradient(90deg,#00eeff,#00eeff);  /* Cursor color */
+    background-size: 200% auto;
+    transition: 0.5s;
+    animation: gradientShift 5s ease infinite;
+    animation: blink 0.75s steps(3) infinite;
+}/* Cursor blink animation */
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #bbf1ff,#00eeff,#0011ff,#000541);
+    background-size: 200% auto;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.9s;
+    animation: gradientShift 5s ease infinite;
+    margin-top: 0.2rem;
+} */
+
+/* .cta-button a {
+    color: white;
+    text-decoration: none;
+} */
+/* 
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 0, 221, 0.5);
+} */
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} */
+
+
+
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-subtitle{
+    font-size: 1.5rem;
+    color: white;
+    margin-top: -2rem;
+}
+
+
+@media (max-width: 768px) {
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+
+} 
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
