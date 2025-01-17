@@ -33,42 +33,6 @@ window.onload = function() {
     typeWriter();
 };
 
-// Find all elements with the cta-button class
-const ctaButtons = document.querySelectorAll('.cta-button');
-
-// Add scroll functionality to each button
-ctaButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default behavior if button is in a form or link
-        
-        // Get current scroll position and viewport height
-        const currentPosition = window.scrollY;
-        const viewportHeight = window.innerHeight;
-        
-        // Scroll to next viewport
-        window.scrollTo({
-            top: currentPosition + viewportHeight*1.13,
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Optional: Hide button when reaching bottom of page
-window.addEventListener('scroll', () => {
-    const totalHeight = document.documentElement.scrollHeight;
-    const viewportHeight = window.innerHeight;
-    const scrollPosition = window.scrollY;
-
-    ctaButtons.forEach(button => {
-        if (scrollPosition + viewportHeight >= totalHeight - 100) {
-            button.style.opacity = '0';
-            button.style.pointerEvents = 'none';
-        } else {
-            button.style.opacity = '1';
-            button.style.pointerEvents = 'auto';
-        }
-    });
-});
 
 particlesJS('particles-js', {
     particles: {
